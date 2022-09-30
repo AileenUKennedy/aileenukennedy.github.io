@@ -1,0 +1,957 @@
+@prefix : <http://www.marine.ie/ontologies/fod#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix terms: <http://purl.org/dc/terms/> .
+@prefix schema: <http://schema.org/> .
+@base <http://www.marine.ie/ontologies/fod> .
+
+<http://www.marine.ie/ontologies/fod> rdf:type owl:Ontology ;
+                                       terms:created "2022-05"@en ;
+                                       terms:creator "Aileen Kennedy" ;
+                                       terms:description "This ontology is based on fisheries observational data, in particular hierarchical sampling such as that used by ICES."@en ;
+                                       terms:license "https://creativecommons.org/licenses/by-nc-sa/2.0/" ;
+                                       terms:title "Fisheries Observational Data (FOD) Ontology"@en ;
+                                       vann:preferredNamespacePrefix "fod" .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/terms/created
+terms:created rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/creator
+terms:creator rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/description
+terms:description rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/license
+terms:license rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/title
+terms:title rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespacePrefix
+vann:preferredNamespacePrefix rdf:type owl:AnnotationProperty .
+
+
+###  http://schema.org/domainIncludes
+schema:domainIncludes rdf:type owl:AnnotationProperty .
+
+
+###  http://schema.org/rangeIncludes
+schema:rangeIncludes rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#definition
+skos:definition rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#example
+skos:example rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.marine.ie/ontologies/fod#hasArea
+:hasArea rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf owl:topObjectProperty ;
+         rdfs:range :Area ;
+         rdfs:comment "Relation linking level ID and ICES area"@en ;
+         rdfs:label "has area"@en .
+
+
+###  http://www.marine.ie/ontologies/fod#hasArrivalLocation
+:hasArrivalLocation rdf:type owl:ObjectProperty ;
+                    rdfs:comment "Relation linking fishing trip level ID to arrival location"@en ;
+                    rdfs:label "has arrival location"@en .
+
+
+###  http://www.marine.ie/ontologies/fod#hasBioVar
+:hasBioVar rdf:type owl:ObjectProperty ;
+           rdfs:comment "Relation linking national unique fish  and bio var "@en ;
+           rdfs:label "has bio var "@en .
+
+
+###  http://www.marine.ie/ontologies/fod#hasBioVarFish
+:hasBioVarFish rdf:type owl:ObjectProperty ;
+               rdfs:comment "Relation linking sample level  and national unique fish "@en ;
+               rdfs:label "has bio var fish "@en .
+
+
+###  http://www.marine.ie/ontologies/fod#hasCatchCategory
+:hasCatchCategory rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf owl:topObjectProperty ;
+                  rdfs:range :CatchCategory ;
+                  rdfs:comment "Relation linking sample level  and catch category"@en ;
+                  rdfs:label "has catch category"@en .
+
+
+###  http://www.marine.ie/ontologies/fod#hasCatchFraction
+:hasCatchFraction rdf:type owl:ObjectProperty ;
+                  rdfs:comment "Relation linking species selection  with catch fratction"@en ;
+                  rdfs:label "has catch fraction"@en .
+
+
+###  http://www.marine.ie/ontologies/fod#hasCatchRegistration
+:hasCatchRegistration rdf:type owl:ObjectProperty ;
+                      rdfs:subPropertyOf owl:topObjectProperty ;
+                      rdfs:range :CatchRegistration ;
+                      rdfs:comment "Relation linking landing event  to catch registration"@en ;
+                      rdfs:label "has catch registration"@en .
+
+
+###  http://www.marine.ie/ontologies/fod#hasCertaintyQualitative
+:hasCertaintyQualitative rdf:type owl:ObjectProperty ;
+                         rdfs:comment "Relation linking national unique fish  (BioVarFish) with certainty qualitative"@en ;
+                         rdfs:label "has certainty qualitative"@en .
+
+
+###  http://www.marine.ie/ontologies/fod#hasClassMeasured
+:hasClassMeasured rdf:type owl:ObjectProperty ;
+                  rdfs:comment "Relation linking fishing measure level  and length of weight class measured"@en ;
+                  rdfs:label "has class measured"@en .
+
+
+###  http://www.marine.ie/ontologies/fod#hasClusterName
+:hasClusterName rdf:type owl:ObjectProperty ;
+                rdfs:range :ClusterName ;
+                rdfs:comment "Relation linking level ID and cluster name"@en ;
+                rdfs:label "has cluster name"@en .
+
+
+###  http://www.marine.ie/ontologies/fod#hasConversionFactorAssessment
+:hasConversionFactorAssessment rdf:type owl:ObjectProperty ;
+                               rdfs:comment "Relation linking level ID and conversion factor assessment"@en ;
+                               rdfs:label "has conversion factor assessment"@en .
+
+
+###  http://www.marine.ie/ontologies/fod#hasEncrytpedVesselCode
+:hasEncrytpedVesselCode rdf:type owl:ObjectProperty ;
+                        rdfs:comment "Relation linking fishing level  and encrypted vessel code"@en ;
+                        rdfs:label "has encrypted vessel code"@en .
+
+
+###  http://www.marine.ie/ontologies/fod#hasFishingTrip
+:hasFishingTrip rdf:type owl:ObjectProperty ;
+                rdfs:comment "relation between onshore event and fishing trip" ;
+                rdfs:label "has fishing trip" .
+
+
+###  http://www.marine.ie/ontologies/fod#hasFrequencyMeasure
+:hasFrequencyMeasure rdf:type owl:ObjectProperty ;
+                     rdfs:comment "A relationship between Sample and FrequencyMeasure" ;
+                     rdfs:label "has frequency Meaure " .
+
+
+###  http://www.marine.ie/ontologies/fod#hasGSASubarea
+:hasGSASubarea rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf owl:topObjectProperty ;
+               rdfs:range :GSASubarea ;
+               rdfs:comment "Relation linking level id and GSA subarea"@en ;
+               rdfs:label "has GSA subarea" .
+
+
+###  http://www.marine.ie/ontologies/fod#hasGearType
+:hasGearType rdf:type owl:ObjectProperty ;
+             rdfs:comment "Relation linking landing event  to gear type"@en ;
+             rdfs:label "has gear type"@en .
+
+
+###  http://www.marine.ie/ontologies/fod#hasLandingCountry
+:hasLandingCountry rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf owl:topObjectProperty ;
+                   rdfs:range :LandingCountry ;
+                   rdfs:comment "Relation linking landing event  and landing country"@en ;
+                   rdfs:label "has landing country"@en .
+
+
+###  http://www.marine.ie/ontologies/fod#hasLandingEvent
+:hasLandingEvent rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf owl:topObjectProperty ;
+                 rdfs:comment "Relation linking onshore event  and landing event "@en ;
+                 rdfs:label "has landing event "@en .
+
+
+###  http://www.marine.ie/ontologies/fod#hasMetier6
+:hasMetier6 rdf:type owl:ObjectProperty ;
+            rdfs:comment "Relation between level ID and Metier 6 fishing activity"@en ;
+            rdfs:label "has metier 6"@en .
+
+
+###  http://www.marine.ie/ontologies/fod#hasMitigationDevice
+:hasMitigationDevice rdf:type owl:ObjectProperty ;
+                     rdfs:comment "Relation linking landing event  and bycatch mitigation device"@en ;
+                     rdfs:label "has mitigation device"@en .
+
+
+###  http://www.marine.ie/ontologies/fod#hasObservationActivityType
+:hasObservationActivityType rdf:type owl:ObjectProperty ;
+                            rdfs:comment "Registers the part of the fishing operation that was sampled. Conceptually, fishing operations are considered divided into a SLIPPING stage (Slip), DROP-OUT stage (Drop), a PRESORTING stage (Presort) and a SORTING stage (Sort), etc."@en ;
+                            rdfs:label "has observation activity type"@en .
+
+
+###  http://www.marine.ie/ontologies/fod#hasObservationType
+:hasObservationType rdf:type owl:ObjectProperty ;
+                    rdfs:comment "Relation linking species selection level  with observation type"@en ;
+                    rdfs:label "has observation type"@en .
+
+
+###  http://www.marine.ie/ontologies/fod#hasOnshoreEvent
+:hasOnshoreEvent rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf owl:topObjectProperty ;
+                 rdfs:comment "Relation linking Sampling detail and Onshore event"@en ;
+                 rdfs:label "has onshore event "@en .
+
+
+###  http://www.marine.ie/ontologies/fod#hasPresentation
+:hasPresentation rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf owl:topObjectProperty ;
+                 rdfs:comment "Relation between sample or specimen and presentation entity"@en ;
+                 rdfs:label "has presentation"@en .
+
+
+###  http://www.marine.ie/ontologies/fod#hasRecordType
+:hasRecordType rdf:type owl:ObjectProperty ;
+               rdfs:comment "Relation between some ID number and RecordType entity"@en ;
+               rdfs:label "has record type"@en .
+
+
+###  http://www.marine.ie/ontologies/fod#hasSample
+:hasSample rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf owl:topObjectProperty ;
+           rdfs:domain :SpeciesSelection ;
+           owl:propertyDisjointWith <http://www.w3.org/ns/sosa/hasSample> ;
+           rdfs:comment "Relation linking species selection level and sample level "@en ;
+           rdfs:label "has sampling " .
+
+
+###  http://www.marine.ie/ontologies/fod#hasSampleInstitute
+:hasSampleInstitute rdf:type owl:ObjectProperty ;
+                    rdfs:range :SamplingInstitute ;
+                    rdfs:comment "Relation linking sampling detail and sampling institute"@en ;
+                    rdfs:label "has sampling institute" .
+
+
+###  http://www.marine.ie/ontologies/fod#hasSampleLocode
+:hasSampleLocode rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf owl:topObjectProperty ;
+                 rdfs:range :SampleLocode ;
+                 rdfs:comment "Relation linking onshore even it and sample locode"@en ;
+                 rdfs:label "has sample locode"@en .
+
+
+###  http://www.marine.ie/ontologies/fod#hasSampler
+:hasSampler rdf:type owl:ObjectProperty ;
+            rdfs:comment "Relation linking fishing trip level  with sampler"@en ;
+            rdfs:label "has sampler"@en .
+
+
+###  http://www.marine.ie/ontologies/fod#hasSamplingCountry
+:hasSamplingCountry rdf:type owl:ObjectProperty ;
+                    rdfs:range :SamplingCountry ;
+                    rdfs:comment "Relation linking sampling detail  and sampling country"@en ;
+                    rdfs:label "has sampling country"@en .
+
+
+###  http://www.marine.ie/ontologies/fod#hasSamplingDetail
+:hasSamplingDetail rdf:type owl:ObjectProperty ;
+                   rdfs:comment "Relation linking design level  and sampling detail"@en ;
+                   rdfs:label "has sampling detail"@en .
+
+
+###  http://www.marine.ie/ontologies/fod#hasSamplingLocation
+:hasSamplingLocation rdf:type owl:ObjectProperty ;
+                     rdfs:subPropertyOf owl:topObjectProperty ;
+                     rdfs:range :SamplingLocation ;
+                     rdfs:comment "Relation linking onshore event and sampling location"@en ;
+                     rdfs:label "has sampling location"@en .
+
+
+###  http://www.marine.ie/ontologies/fod#hasSamplingScheme
+:hasSamplingScheme rdf:type owl:ObjectProperty ;
+                   rdfs:range <urn:absolute:www.marine.ie/ontologies/fod#SamplingScheme> ;
+                   rdfs:label "Relation linking Design and sampling scheme"@en ,
+                              "has sampling scheme"@en .
+
+
+###  http://www.marine.ie/ontologies/fod#hasSamplingType
+:hasSamplingType rdf:type owl:ObjectProperty ;
+                 rdfs:comment "Relation linking fishing trip level  with sampling type"@en ;
+                 rdfs:label "has sampling type"@en .
+
+
+###  http://www.marine.ie/ontologies/fod#hasSelectionMethod
+:hasSelectionMethod rdf:type owl:ObjectProperty ;
+                    rdfs:comment "Relation between level  and selection method"@en ;
+                    rdfs:label "has selection method"@en .
+
+
+###  http://www.marine.ie/ontologies/fod#hasSequenceNumber
+:hasSequenceNumber rdf:type owl:ObjectProperty ;
+                   rdfs:comment "Relation linking  and sequence number"@en ;
+                   rdfs:label "has sequence number"@en .
+
+
+###  http://www.marine.ie/ontologies/fod#hasSex
+:hasSex rdf:type owl:ObjectProperty ;
+        rdfs:subPropertyOf owl:topObjectProperty ;
+        rdfs:range :Sex ;
+        rdfs:comment "Relation linking sample level with sex of sample"@en ;
+        rdfs:label "has sex"@en .
+
+
+###  http://www.marine.ie/ontologies/fod#hasSpeciesCode
+:hasSpeciesCode rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf owl:topObjectProperty ;
+                rdfs:range :SpeciesCode ;
+                rdfs:comment "Relation linking sample level with species code of sample"@en ;
+                rdfs:label "has species code"@en .
+
+
+###  http://www.marine.ie/ontologies/fod#hasSpeciesListName
+:hasSpeciesListName rdf:type owl:ObjectProperty ;
+                    rdfs:comment "Relation linking species selection level with species list name"@en ;
+                    rdfs:label "has species list name"@en .
+
+
+###  http://www.marine.ie/ontologies/fod#hasSpeciesSelection
+:hasSpeciesSelection rdf:type owl:ObjectProperty ;
+                     rdfs:subPropertyOf owl:topObjectProperty ;
+                     rdfs:range :SpeciesSelection ;
+                     rdfs:comment "Relation linking landing event level and species selection level"@en ;
+                     rdfs:label "has species selection "@en .
+
+
+###  http://www.marine.ie/ontologies/fod#hasSpecimenState
+:hasSpecimenState rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf owl:topObjectProperty ;
+                  rdfs:range :SpecimenState ;
+                  rdfs:comment "Relation linking sample level  and specimen state"@en ;
+                  rdfs:label "has specimen state"@en .
+
+
+###  http://www.marine.ie/ontologies/fod#hasStateOfProcessing
+:hasStateOfProcessing rdf:type owl:ObjectProperty ;
+                      rdfs:subPropertyOf owl:topObjectProperty ;
+                      rdfs:comment "Relation between sample or specimen and state of processing entity"@en ;
+                      rdfs:label "has state of processing"@en .
+
+
+###  http://www.marine.ie/ontologies/fod#hasStratumName
+:hasStratumName rdf:type owl:ObjectProperty ;
+                rdfs:comment "Relation linking to Stratum name from different levels" ;
+                rdfs:label "has stratum name" .
+
+
+###  http://www.marine.ie/ontologies/fod#hasTypeAssessment
+:hasTypeAssessment rdf:type owl:ObjectProperty ;
+                   rdfs:comment "Relation linking level  with measurement type for assessment"@en ;
+                   rdfs:label "has type assessment" .
+
+
+###  http://www.marine.ie/ontologies/fod#hasTypeMeasured
+:hasTypeMeasured rdf:type owl:ObjectProperty ;
+                 rdfs:comment "Relation linking level  with type of biological measurement meaured" ;
+                 rdfs:label "has type measured" .
+
+
+###  http://www.marine.ie/ontologies/fod#hasUnitName
+:hasUnitName rdf:type owl:ObjectProperty ;
+             rdfs:comment "Relation linking  and unit name"@en ;
+             rdfs:label "has unit name"@en .
+
+
+###  http://www.marine.ie/ontologies/fod#hasUnitType
+:hasUnitType rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf owl:topObjectProperty ;
+             rdfs:comment "relation linking level ID and unit type"@en ;
+             rdfs:label "has unit type"@en .
+
+
+###  http://www.marine.ie/ontologies/fod#hasValueUnitOrScale
+:hasValueUnitOrScale rdf:type owl:ObjectProperty ;
+                     rdfs:comment "Relation linking national unique fish ID and value unit or scale"@en ;
+                     rdfs:label "has value unit or scale"@en .
+
+
+###  http://www.marine.ie/ontologies/fod#hasYear
+:hasYear rdf:type owl:ObjectProperty ;
+         rdfs:comment "Relation linking Design  and Year"@en ;
+         rdfs:label "has year"@en .
+
+
+###  http://www.w3.org/ns/sosa/hasFeatureOfInterest
+<http://www.w3.org/ns/sosa/hasFeatureOfInterest> rdf:type owl:ObjectProperty ;
+                                                 owl:inverseOf <http://www.w3.org/ns/sosa/isFeatureOfInterestOf> ;
+                                                 schema:domainIncludes <http://www.w3.org/ns/sosa/Actuation> ,
+                                                                       <http://www.w3.org/ns/sosa/Observation> ,
+                                                                       <http://www.w3.org/ns/sosa/Sampling> ;
+                                                 schema:rangeIncludes <http://www.w3.org/ns/sosa/FeatureOfInterest> ,
+                                                                      <http://www.w3.org/ns/sosa/Sample> ;
+                                                 rdfs:comment "A relation between an Observation and the entity whose quality was observed, or between an Actuation and the entity whose property was modified, or between an act of Sampling and the entity that was sampled."@en ;
+                                                 rdfs:isDefinedBy <http://www.w3.org/ns/sosa/> ;
+                                                 rdfs:label "has feature of interest"@en ;
+                                                 skos:definition "A relation between an Observation and the entity whose quality was observed, or between an Actuation and the entity whose property was modified, or between an act of Sampling and the entity that was sampled."@en ;
+                                                 skos:example "For example, in an Observation of the weight of a person, the FeatureOfInterest is the person and the property is its weight."@en .
+
+
+###  http://www.w3.org/ns/sosa/hasResult
+<http://www.w3.org/ns/sosa/hasResult> rdf:type owl:ObjectProperty .
+
+
+###  http://www.w3.org/ns/sosa/hasSample
+<http://www.w3.org/ns/sosa/hasSample> rdf:type owl:ObjectProperty .
+
+
+###  http://www.w3.org/ns/sosa/isFeatureOfInterestOf
+<http://www.w3.org/ns/sosa/isFeatureOfInterestOf> rdf:type owl:ObjectProperty ;
+                                                  schema:domainIncludes <http://www.w3.org/ns/sosa/FeatureOfInterest> ,
+                                                                        <http://www.w3.org/ns/sosa/Sample> ;
+                                                  schema:rangeIncludes <http://www.w3.org/ns/sosa/Actuation> ,
+                                                                       <http://www.w3.org/ns/sosa/Observation> ,
+                                                                       <http://www.w3.org/ns/sosa/Sampling> ;
+                                                  rdfs:comment "A relation between a FeatureOfInterest and an Observation about it, an Actuation acting on it, or an act of Sampling that sampled it."@en ;
+                                                  rdfs:isDefinedBy <http://www.w3.org/ns/sosa/> ;
+                                                  rdfs:label "is feature of interest of"@en ;
+                                                  skos:definition "A relation between a FeatureOfInterest and an Observation about it, an Actuation acting on it, or an act of Sampling that sampled it."@en .
+
+
+###  http://www.w3.org/ns/sosa/madeBySensor
+<http://www.w3.org/ns/sosa/madeBySensor> rdf:type owl:ObjectProperty .
+
+
+###  http://www.w3.org/ns/sosa/observedProperty
+<http://www.w3.org/ns/sosa/observedProperty> rdf:type owl:ObjectProperty ;
+                                             schema:domainIncludes <http://www.w3.org/ns/sosa/Observation> ;
+                                             schema:rangeIncludes <http://www.w3.org/ns/sosa/ObservableProperty> ;
+                                             rdfs:comment "Relation linking an Observation to the property that was observed. The ObservableProperty should be a property of the FeatureOfInterest (linked by hasFeatureOfInterest) of this Observation."@en ;
+                                             rdfs:isDefinedBy <http://www.w3.org/ns/sosa/> ;
+                                             rdfs:label "observed property"@en ;
+                                             skos:definition "Relation linking an Observation to the property that was observed. The ObservableProperty should be a property of the FeatureOfInterest (linked by hasFeatureOfInterest) of this Observation."@en .
+
+
+###  http://www.w3.org/ns/sosa/phenomenonTime
+<http://www.w3.org/ns/sosa/phenomenonTime> rdf:type owl:ObjectProperty .
+
+
+###  http://www.w3.org/ns/sosa/usedProcedure
+<http://www.w3.org/ns/sosa/usedProcedure> rdf:type owl:ObjectProperty .
+
+
+###  http://www.w3.org/ns/ssn/wasOriginatedBy
+<http://www.w3.org/ns/ssn/wasOriginatedBy> rdf:type owl:ObjectProperty .
+
+
+###  urn:absolute:www.marine.ie/ontologies/fod#hasDesignHierarchy
+<urn:absolute:www.marine.ie/ontologies/fod#hasDesignHierarchy> rdf:type owl:ObjectProperty ;
+                                                               rdfs:range <urn:absolute:www.marine.ie/ontologies/fod#DesignHierarchy> ;
+                                                               rdfs:comment "Relation between Design  and Design Hierarchy"@en ;
+                                                               rdfs:label "has Design Hierarchy" .
+
+
+###  urn:absolute:www.marine.ie/ontologies/fod#hasSamplingSchemeType
+<urn:absolute:www.marine.ie/ontologies/fod#hasSamplingSchemeType> rdf:type owl:ObjectProperty ;
+                                                                  rdfs:range <urn:absolute:www.marine.ie/ontologies/fod#SamplingSchemeType> ;
+                                                                  rdfs:comment "Relation linking Design  and Sampling scheme type"@en ;
+                                                                  rdfs:label "has sampling scheme type"@en .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.marine.ie/ontologies/fod#hasArrivalDate
+:hasArrivalDate rdf:type owl:DatatypeProperty ;
+                rdfs:comment "has arrival date"@en ;
+                rdfs:label "has arrival date"@en .
+
+
+###  http://www.marine.ie/ontologies/fod#hasClustering
+:hasClustering rdf:type owl:DatatypeProperty ;
+               rdfs:range xsd:boolean ;
+               rdfs:comment "Indication of presence or absence of clustering"@en ;
+               rdfs:label "has clustering"@en .
+
+
+###  http://www.marine.ie/ontologies/fod#hasSamplingDate
+:hasSamplingDate rdf:type owl:DatatypeProperty ;
+                 rdfs:range xsd:dateTime ;
+                 rdfs:comment "has sampling date"@en ;
+                 rdfs:label "has sampling date"@en .
+
+
+###  http://www.marine.ie/ontologies/fod#hasStratification
+:hasStratification rdf:type owl:DatatypeProperty ;
+                   rdfs:comment "Indicator of presence (\"Y\") or absence (\"N\") of stratification of units of that sampling level"@en ;
+                   rdfs:label "has stratification"@en .
+
+
+###  http://www.marine.ie/ontologies/fod#isHierarchyCorrect
+:isHierarchyCorrect rdf:type owl:DatatypeProperty ;
+                    rdfs:range xsd:boolean ;
+                    rdfs:comment "Indication if hierarchy is correct or not"@en ;
+                    rdfs:label "is hierarchy correct"@en .
+
+
+###  http://www.marine.ie/ontologies/fod#isMixedTrip
+:isMixedTrip rdf:type owl:DatatypeProperty ;
+             rdfs:range xsd:boolean ;
+             rdfs:comment "Have these landings come from a mix of trips"@en ;
+             rdfs:label "is mixed trip"@en .
+
+
+###  http://www.marine.ie/ontologies/fod#isSampled
+:isSampled rdf:type owl:DatatypeProperty ;
+           rdfs:range xsd:boolean ;
+           rdfs:comment "Sampled is the boolean that indicates if a unit was sampled or not"@en ;
+           rdfs:label "is sampled"@en .
+
+
+###  http://www.marine.ie/ontologies/fod#isUseForCalculateZero
+:isUseForCalculateZero rdf:type owl:DatatypeProperty ;
+                       rdfs:range xsd:boolean ;
+                       rdfs:comment "is this used to calculate zero" ;
+                       rdfs:label "is used for calculate zero" .
+
+
+###  http://www.w3.org/ns/sosa/hasSimpleResult
+<http://www.w3.org/ns/sosa/hasSimpleResult> rdf:type owl:DatatypeProperty ;
+                                            schema:domainIncludes <http://www.w3.org/ns/sosa/Actuation> ,
+                                                                  <http://www.w3.org/ns/sosa/Observation> ,
+                                                                  <http://www.w3.org/ns/sosa/Sampling> ;
+                                            rdfs:comment "The simple value of an Observation or Actuation or act of Sampling."@en ,
+                                                         "has sampling date" ;
+                                            rdfs:isDefinedBy <http://www.w3.org/ns/sosa/> ;
+                                            rdfs:label "has simple result"@en ;
+                                            skos:definition "The simple value of an Observation or Actuation or act of Sampling."@en ;
+                                            skos:example "For instance, the values 23 or true."@en .
+
+
+###  http://www.w3.org/ns/sosa/resultTime
+<http://www.w3.org/ns/sosa/resultTime> rdf:type owl:DatatypeProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.marine.ie/ontologies/fod#Area
+:Area rdf:type owl:Class ;
+      rdfs:comment "The area that this LandingEvent was caught in."@en ;
+      rdfs:label "Area"@en .
+
+
+###  http://www.marine.ie/ontologies/fod#ArrivalLocation
+:ArrivalLocation rdf:type owl:Class ;
+                 rdfs:comment "LOCODE of arrival location"@en ;
+                 rdfs:label "Arrival Location"@en .
+
+
+###  http://www.marine.ie/ontologies/fod#BioVar
+:BioVar rdf:type owl:Class ;
+        rdfs:subClassOf <http://www.w3.org/ns/sosa/Observation> ;
+        rdfs:comment "Biological variable level ID"@en ;
+        rdfs:label "Biological variable" .
+
+
+###  http://www.marine.ie/ontologies/fod#BioVarFish
+:BioVarFish rdf:type owl:Class ;
+            rdfs:comment "National ID of the Individual fish / specimen. Unique across all species, years etc. This could be use as the link to other system e.g. SmartDots." ;
+            rdfs:label "National unique fish ID" .
+
+
+###  http://www.marine.ie/ontologies/fod#CatchCategory
+:CatchCategory rdf:type owl:Class ;
+               rdfs:comment """'Lan': Landings categorised as above minimum reference size
+'BMS': landings categorised as below minimum reference size
+'Catch': catch which is not determined if it is landing or discard so it include potentially both
+'Dis': discard released to the sea"""@en ;
+               rdfs:label "Catch category"@en .
+
+
+###  http://www.marine.ie/ontologies/fod#CatchFraction
+:CatchFraction rdf:type owl:Class ;
+               rdfs:comment "'Registers how the catch is sampled by observers."@en ;
+               rdfs:label "Catch fraction"@en .
+
+
+###  http://www.marine.ie/ontologies/fod#CatchRegistration
+:CatchRegistration rdf:type owl:Class ;
+                   rdfs:comment "Registers what components of catch are expected in the species selection table options: All – either Catch or Lan+Dis rows expected next table);  Lan – only landings expected in next table; Dis – only discard expected in next table; None – no next table."@en ;
+                   rdfs:label "Catch registration"@en .
+
+
+###  http://www.marine.ie/ontologies/fod#CertaintyQualitative
+:CertaintyQualitative rdf:type owl:Class ;
+                      rdfs:comment "Qualitative measures of certainty e.g. WGBIOP's quality scale for age readability. Use 'Unknown' if not recorded and 'NotApplicable' if this is not reported for this measuremnet e.g. length"@en ;
+                      rdfs:label "Certainty qualitative"@en .
+
+
+###  http://www.marine.ie/ontologies/fod#ClassMeasured
+:ClassMeasured rdf:type owl:Class ;
+               rdfs:comment "The measured class in mm. or grammes, typically length (Lower bound of size class, e.g. 650 for 65-66 cm)" ;
+               rdfs:label "Length or weight class measured" .
+
+
+###  http://www.marine.ie/ontologies/fod#ClusterName
+:ClusterName rdf:type owl:Class ;
+             rdfs:comment "Name or code of the cluster selected for sampling"@en ;
+             rdfs:label "Cluster name"@en .
+
+
+###  http://www.marine.ie/ontologies/fod#ConversionFactorAssessment
+:ConversionFactorAssessment rdf:type owl:Class ;
+                            rdfs:comment "The conversion factor needed for the conversion from the measured type to the assessment type. If no conversion then this is equal to 1." ;
+                            rdfs:label "Conversion factor assessment" .
+
+
+###  http://www.marine.ie/ontologies/fod#Design
+:Design rdf:type owl:Class ;
+        rdfs:comment "Design level ID" ;
+        rdfs:label "Design" .
+
+
+###  http://www.marine.ie/ontologies/fod#EncryptedVesselCode
+:EncryptedVesselCode rdf:type owl:Class ;
+                     rdfs:comment "Encrypted vessel identifier max. 100 characters, encrypted by the national institute before it is upload. Id encrypted so that no-one can map the Id to the real vessel. This code should be used by the Encrypted Vessel Identifier field in the Vessel Selection. If the characteristics of the vessel change range group e.g. length group, then a new encrypted vessel code have to be inserted. If regional sampling schemes are use, then the vessels have to be coordinated across countries, so one vessel only appears as one record/vessel in this Vessel Details table."@en ;
+                     rdfs:label "Encrypted vessel code"@en .
+
+
+###  http://www.marine.ie/ontologies/fod#FishingTrip
+:FishingTrip rdf:type owl:Class ;
+             rdfs:comment "Fishing trip level id" ;
+             rdfs:label "Fishing Trip" .
+
+
+###  http://www.marine.ie/ontologies/fod#FrequencyMeasure
+:FrequencyMeasure rdf:type owl:Class ;
+                  rdfs:subClassOf <http://www.w3.org/ns/sosa/Observation> ;
+                  rdfs:comment "Frequency measure level ID"@en ;
+                  rdfs:label "Frequency measure" .
+
+
+###  http://www.marine.ie/ontologies/fod#GSASubarea
+:GSASubarea rdf:type owl:Class ;
+            rdfs:comment "GSA subarea, mandatory for FAO area 37 (Mediterranean and Black Sea). (Use 'NotApplicable' if not fishing in the area)"@en ;
+            rdfs:label "GSA subarea"@en .
+
+
+###  http://www.marine.ie/ontologies/fod#GearType
+:GearType rdf:type owl:Class ;
+          rdfs:comment "The FAO gear code."@en ;
+          rdfs:label "Gear type"@en .
+
+
+###  http://www.marine.ie/ontologies/fod#LandingCountry
+:LandingCountry rdf:type owl:Class ;
+                rdfs:comment "The country that this LandingEvent location is in."@en ;
+                rdfs:label "Landing country"@en .
+
+
+###  http://www.marine.ie/ontologies/fod#LandingEvent
+:LandingEvent rdf:type owl:Class ;
+              rdfs:comment "Landing event ID" ;
+              rdfs:label "Landing event" .
+
+
+###  http://www.marine.ie/ontologies/fod#Metier6
+:Metier6 rdf:type owl:Class ;
+         rdfs:comment "Level 6 metier"@en ;
+         rdfs:label "Metier 6 fishing activity"@en .
+
+
+###  http://www.marine.ie/ontologies/fod#MitigationDevice
+:MitigationDevice rdf:type owl:Class ;
+                  rdfs:comment "Codes for dominant other mitigation devices: AttAcoustic, AttAltProf, AttExclDev, AttLight, unknown, None, etc."@en ;
+                  rdfs:label "Bycatch mitigation device"@en .
+
+
+###  http://www.marine.ie/ontologies/fod#ObservationActivityType
+:ObservationActivityType rdf:type owl:Class ;
+                         rdfs:comment "Registers the part of the fishing operation that was sampled. Conceptually, fishing operations are considered divided into a SLIPPING stage (Slip), DROP-OUT stage (Drop), a PRESORTING stage (Presort) and a SORTING stage (Sort), etc. Use \"Sort\" if samples come from landing events or trips sampled onshore."@en ;
+                         rdfs:label "Observation activity type"@en .
+
+
+###  http://www.marine.ie/ontologies/fod#ObservationType
+:ObservationType rdf:type owl:Class ;
+                 rdfs:comment "'Registers the type of sampling performed. Codes: Visual (when observers screen the catch visually), Volume (when observers sample a volume, e.g., a box or basket) and Imagery (camera recordings). (before called: SamplingType)"@en ;
+                 rdfs:label "Observation type"@en .
+
+
+###  http://www.marine.ie/ontologies/fod#OnshoreEvent
+:OnshoreEvent rdf:type owl:Class ;
+              rdfs:comment "Onshore event level ID"@en ;
+              rdfs:label "Onshore Event"@en .
+
+
+###  http://www.marine.ie/ontologies/fod#Presentation
+:Presentation rdf:type owl:Class ;
+              rdfs:comment "Presentation; the condition in which the sample was presented, e.g. gutted, whole, headless, tail, wing. The presentation will in most cases follow the presentation in the SA table." ;
+              rdfs:label "Presentation" .
+
+
+###  http://www.marine.ie/ontologies/fod#RecordType
+:RecordType rdf:type owl:Class ;
+            rdfs:comment "Type of record being recorded eg DE - Design, SD - Sampling Details" ;
+            rdfs:label "Record type" .
+
+
+###  http://www.marine.ie/ontologies/fod#SampleLocode
+:SampleLocode rdf:type owl:Class ;
+              rdfs:comment "LOCODE of sampling location"@en ;
+              rdfs:label "Sampling locode"@en .
+
+
+###  http://www.marine.ie/ontologies/fod#Sampler
+:Sampler rdf:type owl:Class ;
+         rdfs:comment "Self-sampling, Observer, Control, Electronic Monitoring (EM"@en ;
+         rdfs:label "Sampler"@en .
+
+
+###  http://www.marine.ie/ontologies/fod#SamplingCountry
+:SamplingCountry rdf:type owl:Class ;
+                 owl:disjointWith :SamplingInstitute ;
+                 rdfs:comment "The country that did the sampling"@en ;
+                 rdfs:label "Sampling Country"@en .
+
+
+###  http://www.marine.ie/ontologies/fod#SamplingDetail
+:SamplingDetail rdf:type owl:Class ;
+                rdfs:comment "Sampling detail level ID"@en ;
+                rdfs:label "Sampling detail"@en .
+
+
+###  http://www.marine.ie/ontologies/fod#SamplingInstitute
+:SamplingInstitute rdf:type owl:Class ;
+                   rdfs:comment "The sampling institution, i.e. those who actually did the sampling"@en ;
+                   rdfs:label "Sampling institute"@en .
+
+
+###  http://www.marine.ie/ontologies/fod#SamplingLocation
+:SamplingLocation rdf:type owl:Class ;
+                  rdfs:comment "National Name of location"@en ;
+                  rdfs:label "Sampling location"@en .
+
+
+###  http://www.marine.ie/ontologies/fod#SamplingType
+:SamplingType rdf:type owl:Class ;
+              rdfs:comment "Indicating if the sampling is do 'At-Sea' or 'On-Shore'"@en ;
+              rdfs:label "Sampling type"@en .
+
+
+###  http://www.marine.ie/ontologies/fod#SelectionMethod
+:SelectionMethod rdf:type owl:Class ;
+                 rdfs:comment "The method of selecction unit"@en ;
+                 rdfs:label "Selection Method"@en .
+
+
+###  http://www.marine.ie/ontologies/fod#SequenceNumber
+:SequenceNumber rdf:type owl:Class ;
+                rdfs:comment "Sequential numbering. The sequence number identify the selections made. Preperably representing the order of the selections."@en ;
+                rdfs:label "Sequence number"@en .
+
+
+###  http://www.marine.ie/ontologies/fod#Sex
+:Sex rdf:type owl:Class ;
+     rdfs:comment "Sex"@en ;
+     rdfs:label "Sex"@en .
+
+
+###  http://www.marine.ie/ontologies/fod#SpeciesCode
+:SpeciesCode rdf:type owl:Class ;
+             rdfs:comment "The Aphiaid code of the species given by www.marinespecies.org (127160 for Solea solea). In the case of mixed species this may be the commercial taxon."@en ;
+             rdfs:label "Species code"@en .
+
+
+###  http://www.marine.ie/ontologies/fod#SpeciesListName
+:SpeciesListName rdf:type owl:Class ;
+                 rdfs:comment "'National name of the species list"@en ;
+                 rdfs:label "Species list name"@en .
+
+
+###  http://www.marine.ie/ontologies/fod#SpeciesSelection
+:SpeciesSelection rdf:type owl:Class ;
+                  rdfs:comment "Species selection level ID"@en ;
+                  rdfs:label "Species selection"@en .
+
+
+###  http://www.marine.ie/ontologies/fod#SpecimenState
+:SpecimenState rdf:type owl:Class ;
+               rdfs:comment "'State of the specimens (e.g., dead, damaged, etc)."@en ;
+               rdfs:label "Specimen state"@en .
+
+
+###  http://www.marine.ie/ontologies/fod#StateOfProcessing
+:StateOfProcessing rdf:type owl:Class ;
+                   rdfs:comment "State of processing e.g. boiled, frozen and defrosted. The state will often be the same as the state in the SA table, but in some cases it may change e.g. fish are sampled fresh at-sea in the SA, then they are frozen and the FM/BV variables are measured later in the lab on defrosted fish. If the state is not known, then use 'Unknown'" ;
+                   rdfs:label "State of Processing" .
+
+
+###  http://www.marine.ie/ontologies/fod#StratumName
+:StratumName rdf:type owl:Class ;
+             rdfs:comment "The stratum of this record, 'U' if unstratified"@en ;
+             rdfs:label "Stratum Name"@en .
+
+
+###  http://www.marine.ie/ontologies/fod#TypeAssessment
+:TypeAssessment rdf:type owl:Class ;
+                rdfs:comment "The measurement type of the class needed for assessment e.g. total length, live weight, carapace length." ;
+                rdfs:label "Measurement type for assessment" .
+
+
+###  http://www.marine.ie/ontologies/fod#TypeMeasured
+:TypeMeasured rdf:type owl:Class ;
+              rdfs:comment "The measured measurement type of the e.g. total length, measured weight, carapace length." ;
+              rdfs:label "Type of biological measruement measured" .
+
+
+###  http://www.marine.ie/ontologies/fod#UnitName
+:UnitName rdf:type owl:Class ;
+          rdfs:comment "The unique name of this unit"@en ;
+          rdfs:label "Unit Name"@en .
+
+
+###  http://www.marine.ie/ontologies/fod#UnitType
+:UnitType rdf:type owl:Class ;
+          rdfs:comment "The type of sampling unit. This would define the sampling unit and could be for example a box of fish, number (of fish), a section of net, a basket of mixed discards or individual units (e.g., individual fish randomly sampled throughout the catch)."@en ;
+          rdfs:label "Unit type"@en .
+
+
+###  http://www.marine.ie/ontologies/fod#ValueUnitScale
+:ValueUnitScale rdf:type owl:Class ;
+                rdfs:comment "The unit or scale of the measured value in the biovarValue, e.g. Year/mm/g/maturity scale/winter rings."@en ;
+                rdfs:label "Value unit or scale"@en .
+
+
+###  http://www.marine.ie/ontologies/fod#sample
+:sample rdf:type owl:Class ;
+        rdfs:comment "Sample level ID" ;
+        rdfs:label "Sample" .
+
+
+###  http://www.w3.org/ns/sosa/FeatureOfInterest
+<http://www.w3.org/ns/sosa/FeatureOfInterest> rdf:type owl:Class .
+
+
+###  http://www.w3.org/ns/sosa/ObservableProperty
+<http://www.w3.org/ns/sosa/ObservableProperty> rdf:type owl:Class .
+
+
+###  http://www.w3.org/ns/sosa/Observation
+<http://www.w3.org/ns/sosa/Observation> rdf:type owl:Class ;
+                                        rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                          owl:onProperty <http://www.w3.org/ns/sosa/hasFeatureOfInterest> ;
+                                                          owl:allValuesFrom <http://www.w3.org/ns/sosa/FeatureOfInterest>
+                                                        ] ,
+                                                        [ rdf:type owl:Restriction ;
+                                                          owl:onProperty <http://www.w3.org/ns/sosa/hasResult> ;
+                                                          owl:allValuesFrom <http://www.w3.org/ns/sosa/Result>
+                                                        ] ,
+                                                        [ rdf:type owl:Restriction ;
+                                                          owl:onProperty <http://www.w3.org/ns/sosa/madeBySensor> ;
+                                                          owl:allValuesFrom <http://www.w3.org/ns/sosa/Sensor>
+                                                        ] ,
+                                                        [ rdf:type owl:Restriction ;
+                                                          owl:onProperty <http://www.w3.org/ns/sosa/observedProperty> ;
+                                                          owl:allValuesFrom <http://www.w3.org/ns/sosa/ObservableProperty>
+                                                        ] ,
+                                                        [ rdf:type owl:Restriction ;
+                                                          owl:onProperty <http://www.w3.org/ns/sosa/usedProcedure> ;
+                                                          owl:allValuesFrom <http://www.w3.org/ns/sosa/Procedure>
+                                                        ] ,
+                                                        [ rdf:type owl:Restriction ;
+                                                          owl:onProperty <http://www.w3.org/ns/ssn/wasOriginatedBy> ;
+                                                          owl:allValuesFrom <http://www.w3.org/ns/ssn/Stimulus>
+                                                        ] ,
+                                                        [ rdf:type owl:Restriction ;
+                                                          owl:onProperty <http://www.w3.org/ns/sosa/hasResult> ;
+                                                          owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                                        ] ,
+                                                        [ rdf:type owl:Restriction ;
+                                                          owl:onProperty <http://www.w3.org/ns/sosa/hasFeatureOfInterest> ;
+                                                          owl:cardinality "1"^^xsd:nonNegativeInteger
+                                                        ] ,
+                                                        [ rdf:type owl:Restriction ;
+                                                          owl:onProperty <http://www.w3.org/ns/sosa/madeBySensor> ;
+                                                          owl:cardinality "1"^^xsd:nonNegativeInteger
+                                                        ] ,
+                                                        [ rdf:type owl:Restriction ;
+                                                          owl:onProperty <http://www.w3.org/ns/sosa/observedProperty> ;
+                                                          owl:cardinality "1"^^xsd:nonNegativeInteger
+                                                        ] ,
+                                                        [ rdf:type owl:Restriction ;
+                                                          owl:onProperty <http://www.w3.org/ns/sosa/phenomenonTime> ;
+                                                          owl:cardinality "1"^^xsd:nonNegativeInteger
+                                                        ] ,
+                                                        [ rdf:type owl:Restriction ;
+                                                          owl:onProperty <http://www.w3.org/ns/ssn/wasOriginatedBy> ;
+                                                          owl:cardinality "1"^^xsd:nonNegativeInteger
+                                                        ] ,
+                                                        [ rdf:type owl:Restriction ;
+                                                          owl:onProperty <http://www.w3.org/ns/sosa/resultTime> ;
+                                                          owl:cardinality "1"^^xsd:nonNegativeInteger
+                                                        ] ;
+                                        rdfs:comment "Act of carrying out an (Observation) Procedure to estimate or calculate a value of a property of a FeatureOfInterest. Links to a Sensor to describe what made the Observation and how; links to an ObservableProperty to describe what the result is an estimate of, and to a FeatureOfInterest to detail what that property was associated with."@en ;
+                                        rdfs:isDefinedBy <http://www.w3.org/ns/sosa/> ;
+                                        rdfs:label "Observation"@en ;
+                                        skos:definition "Act of carrying out an (Observation) Procedure to estimate or calculate a value of a property of a FeatureOfInterest. Links to a Sensor to describe what made the Observation and how; links to an ObservableProperty to describe what the result is an estimate of, and to a FeatureOfInterest to detail what that property was associated with."@en ;
+                                        skos:example "The activity of estimating the intensity of an Earthquake using the Mercalli intensity scale is an Observation as is measuring the moment magnitude, i.e., the energy released by said earthquake."@en .
+
+
+###  http://www.w3.org/ns/sosa/Procedure
+<http://www.w3.org/ns/sosa/Procedure> rdf:type owl:Class .
+
+
+###  http://www.w3.org/ns/sosa/Result
+<http://www.w3.org/ns/sosa/Result> rdf:type owl:Class .
+
+
+###  http://www.w3.org/ns/sosa/Sensor
+<http://www.w3.org/ns/sosa/Sensor> rdf:type owl:Class .
+
+
+###  http://www.w3.org/ns/ssn/Stimulus
+<http://www.w3.org/ns/ssn/Stimulus> rdf:type owl:Class .
+
+
+###  urn:absolute:www.marine.ie/ontologies/fod#DesignHierarchy
+<urn:absolute:www.marine.ie/ontologies/fod#DesignHierarchy> rdf:type owl:Class ;
+                                                            rdfs:comment "A code refering to the upper hierarchy that the data was collected using"@en ;
+                                                            rdfs:label "Design hierarchy"@en .
+
+
+###  urn:absolute:www.marine.ie/ontologies/fod#SamplingScheme
+<urn:absolute:www.marine.ie/ontologies/fod#SamplingScheme> rdf:type owl:Class ;
+                                                           rdfs:comment "The name for the sampling scheme under which the data were collected"@en ;
+                                                           rdfs:label "Sampling scheme"@en .
+
+
+###  urn:absolute:www.marine.ie/ontologies/fod#SamplingSchemeType
+<urn:absolute:www.marine.ie/ontologies/fod#SamplingSchemeType> rdf:type owl:Class ;
+                                                               rdfs:comment """Sampling scheme type code list: 
+'Regional Routine', 'Regional Pilot', 'National Routine', 'National Pilot'."""@en ;
+                                                               rdfs:label "Sampling scheme type"@en .
+
+
+###  urn:absolute:www.marine.ie/ontologies/fod#Year
+<urn:absolute:www.marine.ie/ontologies/fod#Year> rdf:type owl:Class ;
+                                                 rdfs:comment "Year of sampling"@en ;
+                                                 rdfs:label "Year"@en .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
